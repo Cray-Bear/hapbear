@@ -1,4 +1,4 @@
-### 项目文档结构
+### Project Document Structure
 
 | Project[/]        |         Descriptors           | Note  |
 | :---------------- |:------------------------------|:------|
@@ -14,7 +14,9 @@
 |src/test/java	    | Test sources                  ||
 |src/test/resources	| Test resources                ||
 |src/test/filters	| Test resource filter files    ||
-|src/site           |                           ||
+|src/site           |                               ||
+|src/doc            | Project documents             ||
+|src/doc/xmind      | Project xmind files           ||
 |pom.xml            | pom.xml                       ||
 |README.md          | Project descriptors           ||
 |LICENSE            | Project license               ||
