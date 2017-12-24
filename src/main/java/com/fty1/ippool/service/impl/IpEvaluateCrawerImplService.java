@@ -68,7 +68,12 @@ public class IpEvaluateCrawerImplService implements IpEvaluateCrawlerService {
         return ipEvaluateCrawlerRepository.findByStatus(IPPoolConstant.IPCRAWLER_STATUS_PRODUCT);
     }
 
-    @Async
+    @Override
+    public List<IpEvaluateCrawler> findDiscard() {
+        return ipEvaluateCrawlerRepository.findByStatus(IPPoolConstant.IPCRAWLER_STATUS_DISCARDED);
+    }
+
+    @Async("ipPoolExecutor")
     @Transactional(readOnly = false,propagation = Propagation.REQUIRES_NEW)
     public void ipEvaluate(IpEvaluateCrawler ipEvaluateCrawler) {
 
@@ -101,7 +106,7 @@ public class IpEvaluateCrawerImplService implements IpEvaluateCrawlerService {
     }
 
 
-    @Async
+    @Async("ipPoolExecutor")
     @Transactional(readOnly = false,propagation = Propagation.REQUIRES_NEW)
     public void ipCrawler(IpSourceCrawler ipSourceCrawler) {
 

@@ -1,6 +1,7 @@
 package com.fty1.ippool.schedule;
 
 
+import com.fty1.ippool.service.IpDiscardCrawlerService;
 import com.fty1.ippool.service.IpProductCrawerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,24 +14,24 @@ import org.springframework.stereotype.Component;
  * 对采集的代理进行IP评估
  */
 @Component
-public class IPProductCrawlerSchedule {
+public class IPDiscardSchedule {
 
 
-    private Logger logger = LoggerFactory.getLogger(IPProductCrawlerSchedule.class);
+    private Logger logger = LoggerFactory.getLogger(IPDiscardSchedule.class);
 
     public final static long ONE_MINUTE =  10 * 1000;
 
     @Autowired
-    private IpProductCrawerService ipProductCrawerService;
+    private IpDiscardCrawlerService ipDiscardCrawlerService;
 
 
     @Scheduled(fixedDelay=ONE_MINUTE)
     @Async("iPPoolScheduleExecutor")
-    public void iPProductCrawlerScheduleFixedDelayJob(){
-        logger.info("schedule|iPProductCrawlerScheduleFixedDelayJob|start|"+System.currentTimeMillis());
+    public void iPDiscardScheduleFixedDelayJob(){
+        logger.info("schedule|iPDiscardScheduleFixedDelayJob|start|"+System.currentTimeMillis());
 
-        ipProductCrawerService.ipCrawler();
+        ipDiscardCrawlerService.ipDiscard();
 
-        logger.info("schedule|iPProductCrawlerScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
+        logger.info("schedule|iPDiscardScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
     }
 }

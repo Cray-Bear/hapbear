@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IpDiscardCrawlerRepository extends JpaRepository<IpDiscardCrawler,String> {
 
+    IpDiscardCrawler findByCode(String code);
 }

@@ -28,7 +28,7 @@ public class IpSourceCrawlerImplService implements IpSourceCrawlerService {
 
 
     @Override
-    @Async
+    @Async("ipPoolExecutor")
     @Transactional(readOnly = false)
     public void gatherIpCrawler(String ip, String port) {
 

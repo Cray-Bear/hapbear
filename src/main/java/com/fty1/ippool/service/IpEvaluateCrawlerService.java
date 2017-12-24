@@ -15,4 +15,6 @@ public interface IpEvaluateCrawlerService {
     List<IpEvaluateCrawler> findUntreated();
 
     List<IpEvaluateCrawler> findProduct();
+
+    List<IpEvaluateCrawler> findDiscard();
 }

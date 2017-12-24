@@ -21,8 +21,6 @@ import java.util.List;
 
 @Component
 public class IpProductCrawerImplService implements IpProductCrawerService {
-
-
     @Autowired
     private IpProductCrawlerRepository ipProductCrawlerRepository;
 
@@ -69,7 +67,7 @@ public class IpProductCrawerImplService implements IpProductCrawerService {
         }
     }
 
-    @Async
+    @Async("ipPoolExecutor")
     @Transactional(readOnly = false,propagation = Propagation.REQUIRES_NEW)
     public void ipCrawler(IpEvaluateCrawler ipEvaluateCrawler) {
 

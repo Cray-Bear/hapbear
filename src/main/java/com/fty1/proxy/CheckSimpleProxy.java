@@ -51,7 +51,7 @@ public class CheckSimpleProxy {
         try{
             URL url = new URL("http://www.baidu.com");
             URLConnection conn = url.openConnection(proxy);
-            conn.setConnectTimeout(500);
+            conn.setConnectTimeout(50);
             conn.setRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 7.0; NT 5.1; GTB5; .NET CLR 2.0.50727; CIBA)");
             Object res = conn.getContent();
             System.out.println(res);
