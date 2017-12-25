@@ -15,9 +15,9 @@ public class IPPoolScheduleExecutorConfig {
     @Bean
     public Executor iPPoolScheduleExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(16);
-        executor.setMaxPoolSize(32);
-        executor.setQueueCapacity(8);
+        executor.setCorePoolSize(4);
+        executor.setMaxPoolSize(8);
+        executor.setQueueCapacity(2);
         executor.setThreadNamePrefix("iPPoolSchedule-");
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         executor.setKeepAliveSeconds(60);
