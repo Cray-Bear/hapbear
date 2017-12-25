@@ -1,0 +1,6 @@
+DROP VIEW  IF EXISTS `ip_sum`;
+CREATE
+  ALGORITHM=UNDEFINED
+  SQL SECURITY DEFINER
+VIEW `ip_sum`AS
+  (select count(1) AS `num`,'ip_source_crawler' AS `type` from `ip_source_crawler`) union (select count(1) AS `num`,'ip_evalue_crawler' AS `type` from `ip_evalue_crawler`) union (select count(1) AS `num`,'ip_discard_crawler' AS `type` from `ip_discard_crawler`) union (select count(1) AS `num`,'ip_product_crawler' AS `type` from `ip_product_crawler`) union (select count(1) AS `num`,'ip_log_crawler' AS `type` from `ip_log_crawler`);
