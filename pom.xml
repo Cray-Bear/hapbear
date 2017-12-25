@@ -6,7 +6,7 @@
     <groupId>com.fty1</groupId>
     <artifactId>root</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>root</name>
     <description>A project for Spring Boot</description>
