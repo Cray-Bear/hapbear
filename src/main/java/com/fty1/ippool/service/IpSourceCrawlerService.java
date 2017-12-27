@@ -13,4 +13,6 @@ public interface IpSourceCrawlerService {
     IpSourceCrawler findByCode(String code);
 
     List<IpSourceCrawler> findUntreated();
+
+    void ipCrawler();
 }

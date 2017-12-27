@@ -18,7 +18,7 @@ public class IPPoolScheduleExecutorConfig {
         executor.setCorePoolSize(4);
         executor.setMaxPoolSize(8);
         executor.setQueueCapacity(2);
-        executor.setThreadNamePrefix("iPPoolSchedule-");
+        executor.setThreadNamePrefix("IPPoolSchedule-");
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         executor.setKeepAliveSeconds(60);
         executor.initialize();

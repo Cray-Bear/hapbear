@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IpTestCrawlerRepository extends JpaRepository<IpTestCrawler,String> {
 
+    IpTestCrawler findByCode(String code);
 }
