@@ -10,7 +10,7 @@ public class EBusiness extends ERoot {
 
     private String businessCode;
 
-    private String describe;
+    private String edescribe;
 
     public String getBusinessCode() {
         return businessCode;
@@ -20,11 +20,11 @@ public class EBusiness extends ERoot {
         this.businessCode = businessCode;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getEdescribe() {
+        return edescribe;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setEdescribe(String edescribe) {
+        this.edescribe = edescribe;
     }
 }

@@ -15,7 +15,7 @@ public class EStatus extends ERoot {
 
     private Integer numberValue;    //节点的数字值
 
-    private String describe;        //描述
+    private String edescribe;        //描述
 
     public String getBusinessCode() {
         return businessCode;
@@ -41,11 +41,11 @@ public class EStatus extends ERoot {
         this.numberValue = numberValue;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getEdescribe() {
+        return edescribe;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setEdescribe(String edescribe) {
+        this.edescribe = edescribe;
     }
 }

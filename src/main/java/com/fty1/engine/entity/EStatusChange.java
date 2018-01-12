@@ -20,10 +20,9 @@ public class EStatusChange extends ERoot {
 
     private String toStatusCode;         //终点
 
-    private String change;                //如何到达
+    private String echange;                //如何到达
 
     private String changeType;            //起点开始触发类型
-
 
     public String getBusinessCode() {
         return businessCode;
@@ -31,6 +30,14 @@ public class EStatusChange extends ERoot {
 
     public void setBusinessCode(String businessCode) {
         this.businessCode = businessCode;
+    }
+
+    public String getFromBusinessCode() {
+        return fromBusinessCode;
+    }
+
+    public void setFromBusinessCode(String fromBusinessCode) {
+        this.fromBusinessCode = fromBusinessCode;
     }
 
     public String getFromStatusCode() {
@@ -41,6 +48,14 @@ public class EStatusChange extends ERoot {
         this.fromStatusCode = fromStatusCode;
     }
 
+    public String getToBusinessCode() {
+        return toBusinessCode;
+    }
+
+    public void setToBusinessCode(String toBusinessCode) {
+        this.toBusinessCode = toBusinessCode;
+    }
+
     public String getToStatusCode() {
         return toStatusCode;
     }
@@ -49,12 +64,12 @@ public class EStatusChange extends ERoot {
         this.toStatusCode = toStatusCode;
     }
 
-    public String getChange() {
-        return change;
+    public String getEchange() {
+        return echange;
     }
 
-    public void setChange(String change) {
-        this.change = change;
+    public void setEchange(String echange) {
+        this.echange = echange;
     }
 
     public String getChangeType() {

@@ -1,22 +1,28 @@
 package com.fty1.engine.entity;
 
-import javax.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 @MappedSuperclass
 public class ERoot {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
+    protected String id;
 
     @Version
     protected Long version;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
