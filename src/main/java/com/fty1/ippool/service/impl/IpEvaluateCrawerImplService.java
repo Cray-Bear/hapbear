@@ -60,17 +60,17 @@ public class IpEvaluateCrawerImplService implements IpEvaluateCrawlerService {
 
     @Override
     public List<IpEvaluateCrawler> findUntreated() {
-        return ipEvaluateCrawlerRepository.findByStatus(IPPoolConstant.IPCRAWLER_STATUS_UNTREATED);
+        return ipEvaluateCrawlerRepository.findTop300ByStatus(IPPoolConstant.IPCRAWLER_STATUS_UNTREATED);
     }
 
     @Override
     public List<IpEvaluateCrawler> findProduct() {
-        return ipEvaluateCrawlerRepository.findByStatus(IPPoolConstant.IPCRAWLER_STATUS_PRODUCT);
+        return ipEvaluateCrawlerRepository.findTop300ByStatus(IPPoolConstant.IPCRAWLER_STATUS_PRODUCT);
     }
 
     @Override
     public List<IpEvaluateCrawler> findDiscard() {
-        return ipEvaluateCrawlerRepository.findByStatus(IPPoolConstant.IPCRAWLER_STATUS_DISCARDED);
+        return ipEvaluateCrawlerRepository.findTop300ByStatus(IPPoolConstant.IPCRAWLER_STATUS_DISCARDED);
     }
 
     @Async("ipPoolExecutor")

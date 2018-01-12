@@ -9,5 +9,5 @@ public interface IpSourceCrawlerRepository extends JpaRepository<IpSourceCrawler
 
     IpSourceCrawler findByCode(String code);
 
-    List<IpSourceCrawler> findByStatus(int ipcrawlerStatusUntreated);
+    List<IpSourceCrawler> findTop300ByStatus(int ipcrawlerStatusUntreated);
 }

@@ -76,7 +76,7 @@ public class IpSourceCrawlerImplService implements IpSourceCrawlerService {
 
     @Override
     public List<IpSourceCrawler> findUntreated() {
-        return ipSourceCrawlerRepository.findByStatus(IPPoolConstant.IPCRAWLER_STATUS_UNTREATED);
+        return ipSourceCrawlerRepository.findTop300ByStatus(IPPoolConstant.IPCRAWLER_STATUS_UNTREATED);
     }
 
     @Override

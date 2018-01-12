@@ -48,7 +48,7 @@ public class IpDisCardCrawerImplService implements IpDiscardCrawlerService {
         String code = ipEvaluateCrawler.getCode();
         ipEvaluateCrawlerRepository.delete(ipEvaluateCrawler);
 
-        IpDiscardCrawler temp=ipDiscardCrawlerRepository.findByCode(code);
+        IpDiscardCrawler temp=ipDiscardCrawlerRepository.findTop300ByCode(code);
         if(temp != null){
             return;
         }

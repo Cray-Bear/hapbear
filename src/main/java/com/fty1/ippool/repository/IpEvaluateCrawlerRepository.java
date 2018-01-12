@@ -9,5 +9,5 @@ public interface IpEvaluateCrawlerRepository extends JpaRepository<IpEvaluateCra
 
     IpEvaluateCrawler findByCode(String code);
 
-    List<IpEvaluateCrawler> findByStatus(int ipcrawlerStatusUntreated);
+    List<IpEvaluateCrawler> findTop300ByStatus(int ipcrawlerStatusUntreated);
 }
