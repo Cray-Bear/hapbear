@@ -30,7 +30,12 @@ public class IPSourceCrawlerSchedule {
     public void iPProductCrawlerScheduleFixedDelayJob(){
         logger.info("schedule|iPProductCrawlerScheduleFixedDelayJob|start|"+System.currentTimeMillis());
 
-        ipSourceCrawlerService.ipCrawler();
+        try {
+            ipSourceCrawlerService.ipCrawler();
+        } catch (Exception e) {
+            logger.info("iPProductCrawlerScheduleFixedDelayJob:",e);
+        }
+
 
         logger.info("schedule|iPProductCrawlerScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
     }

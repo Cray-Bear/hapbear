@@ -29,7 +29,12 @@ public class IPEvaluateSchedule {
     public void iPEvaluateScheduleFixedDelayJob(){
         logger.info("schedule|iPEvaluateScheduleFixedDelayJob|start|"+System.currentTimeMillis());
 
-        ipEvaluateCrawlerService.ipEvaluate();
+        try {
+            ipEvaluateCrawlerService.ipEvaluate();
+        } catch (Exception e) {
+            logger.info("iPEvaluateScheduleFixedDelayJob",e);
+        }
+
 
         logger.info("schedule|iPEvaluateScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
     }

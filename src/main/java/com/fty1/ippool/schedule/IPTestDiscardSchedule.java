@@ -30,7 +30,12 @@ public class IPTestDiscardSchedule {
     public void iPDiscardScheduleFixedDelayJob(){
         logger.info("schedule|iPDiscardScheduleFixedDelayJob|start|"+System.currentTimeMillis());
 
-        ipTestCrawlerService.crawlerIpDiscard();
+
+        try {
+            ipTestCrawlerService.crawlerIpDiscard();
+        } catch (Exception e) {
+            logger.info("iPDiscardScheduleFixedDelayJob:", e);
+        }
 
         logger.info("schedule|iPDiscardScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
     }

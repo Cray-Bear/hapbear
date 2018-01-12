@@ -28,9 +28,11 @@ public class IPSpoorSchedule {
     @Async("iPPoolScheduleExecutor")
     public void iPSpoorScheduleFixedDelayJob(){
         logger.info("schedule|iPSpoorScheduleFixedDelayJob|start|"+System.currentTimeMillis());
-
-        ipSpoorCrawlerService.ipSpoor();
-
+        try {
+            ipSpoorCrawlerService.ipSpoor();
+        } catch (Exception e) {
+            logger.info("iPSpoorScheduleFixedDelayJob:", e);
+        }
         logger.info("schedule|iPSpoorScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
     }
 }

@@ -29,9 +29,11 @@ public class IPDiscardSchedule {
     @Async("iPPoolScheduleExecutor")
     public void iPDiscardScheduleFixedDelayJob(){
         logger.info("schedule|iPDiscardScheduleFixedDelayJob|start|"+System.currentTimeMillis());
-
-        ipDiscardCrawlerService.ipDiscard();
-
+        try {
+            ipDiscardCrawlerService.ipDiscard();
+        } catch (Exception e) {
+            logger.info("iPDiscardScheduleFixedDelayJob",e);
+        }
         logger.info("schedule|iPDiscardScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
     }
 }

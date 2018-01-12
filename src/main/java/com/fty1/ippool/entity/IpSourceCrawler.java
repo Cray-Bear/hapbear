@@ -1,5 +1,6 @@
 package com.fty1.ippool.entity;
 
+import com.fty1.engine.annotation.PointEngine;
 import com.fty1.ippool.constans.IPPoolConstant;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -11,6 +12,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "ip_source_crawler")
+@PointEngine(businessCode = "ippool",tableName = "ip_source_crawler",point = "status")
 public class IpSourceCrawler {
 
 

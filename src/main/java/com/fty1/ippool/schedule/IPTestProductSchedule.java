@@ -29,7 +29,11 @@ public class IPTestProductSchedule {
     public void iPDiscardScheduleFixedDelayJob(){
         logger.info("schedule|iPDiscardScheduleFixedDelayJob|start|"+System.currentTimeMillis());
 
-        ipTestCrawlerService.crawlerIpProduct();
+        try {
+            ipTestCrawlerService.crawlerIpProduct();
+        } catch (Exception e) {
+            logger.info("iPDiscardScheduleFixedDelayJob:",e);
+        }
 
         logger.info("schedule|iPDiscardScheduleFixedDelayJob|stop|"+System.currentTimeMillis());
     }

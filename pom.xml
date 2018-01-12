@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>root</name>
+    <name>hapbear</name>
     <description>A project for Spring Boot</description>
 
     <parent>
